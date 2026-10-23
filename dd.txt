@@ -1,0 +1,63 @@
+Corrections, most important first
+The answer is “A” about 72% of the time. Options are never shuffled, and in 26 of 36 choice questions the correct one is first. Tapping A all the way through scores very well. Shuffle per attempt and save the order in the session so a resume looks the same. The correct option is also the longest one in 15 of 36 questions, which is another tell.
+A timeout throws away what the player picked. If they select an option or type something but the clock hits 0 before they press Submit, they get zero. Auto-submit whatever is in the box instead.
+There is no Enter-to-submit. Text answers aren’t in a <form> and there is no key handling. On mobile this costs people seconds.
+Number scoring is too forgiving.
+Anything within 10% counts as fully correct. A guess of 6.5 for “6 languages” gets full marks and the “Correct!” message.
+For small counts a percentage band doesn’t work. Guessing 3 or 5 siblings (answer 4) gets 75%, and 0 gets 25%. Make small integers exact, or allow ±1 for partial credit.
+Q33 prints the range (₦50m to ₦100m) in the prompt, and any value in it scores 20 points. Don’t reveal the range.
+type="number" inputs block commas and ₦, so the symbol-stripping in scoring.ts never runs. Eight-digit amounts are also hard to type and check. Use a text input with inputMode="numeric", live formatting, and ideally shorthand like “35m”.
+Text matching is too strict.
+It needs an exact string after normalising, and multi-part answers rely on hand-written orderings. “Nutri milk”, “tea & Chinese rice”, “react.js and node.js” and “hustle” all fail.
+Use required keyword groups per answer (each with synonyms), so order doesn’t matter. Add a small typo tolerance, and give partial credit per part.
+Double-check Q5. The prompt says “E no get where it ___” but the accepted answers start with “e”, which suggests the phrase may be slightly off.
+Cross-question giveaways. Q17 (“which is NOT a favourite”) can be solved by elimination from Q13 and Q16. Q35’s answer (Japa) was just given away by Q34. Q2’s answer is hinted by Q1’s options. The “…only” wording in some distractors also telegraphs the right answer, as does the hedged “potentially a tech company” option. Joke distractors like “Buy everybody a car” are fun, but they make it easy.
+The “Unanswered questions” stat on the results screen is always 0. Timeouts are recorded as answers. Count timedOut instead.
+The timer isn’t clock-based. It chains setTimeout calls, which browsers throttle in background tabs. Store a deadline timestamp and compute the remaining time from it. This also removes the eslint-disable set-state-in-effect at the top of App.tsx.
+Sharing and the results card.
+The share text has no link, so it can’t pull anyone in.
+html-to-image is flaky on iOS Safari, where it often needs two calls, and link.click() downloads don’t behave well there. Use navigator.share({ files }) where it’s supported.
+Replace the alert() calls with a toast.
+Answers and scores live in the browser. All answers are in the JS bundle, and the saved score can be edited in localStorage. That’s fine for a casual game, but not if there’s a leaderboard or a prize (see below).
+let us do these but there is no leaderboard
+
+Game design
+Length: 50 questions at up to 30 seconds each, plus 8 intro screens, is about 20 to 25 minutes on a phone. Expect drop-off. I’d offer a Quick mode (about 20) and a Full mode, or cut to about 30. leave the time as is
+Timing: Give typed multi-part answers 45 seconds. Thirty seconds is fine for multiple choice. leave the time as is 
+Difficulty labels don’t line up with points. Q1 is “easy” for 5 points and Q18 is “easy” for 10. 28 of 50 are tagged “hard”. Either derive points from difficulty or drop the labels. do this
+Repeated answers: Japa appears twice and Time appears twice. Vary them. do this 
+Cheaper sources of questions: Q48 (Enugu) and Q50 (surname) are the kind of surprising answers that work well. More like those and fewer “he values time” questions. do this too
+
+Additions I’d make
+Leaderboard plus a Roy view. A small Supabase, Firebase or Cloudflare Worker backend gives him a “who knows me best”  ranking and a per-question miss rate. If prizes are involved, check answers server-side so they never ship in the bundle.
+no need for a leader board
+
+A wishes wall. After results, let players leave a birthday message for him. The current “message from RoyDavinci” is generic text attributed to him, so either use his real words (a voice note or video would be even better) or credit it to the team.
+
+leaving a birthday message is different, let it lead to a whatsapp message instead -> my number is 09159403602
+
+
+A review screen with a “fun fact” per question. This turns the quiz into a story about him rather than just a score. Add an optional funFact field to the question type.
+we can do this but how?
+
+Speed bonus, streaks and per-round badges for competition.
+Challenge links (?ref=name) and a WhatsApp share button, which suits a Naija audience. Not necessarily it is just for my birthday no? 
+Share previews: OG tags and an OG image so the link looks good in chats. Well no issues here 
+
+
+Housekeeping
+App.tsx is 1,109 lines. Split it into Welcome, RoundIntro, Quiz and Results components, and move the state into a useReducer plus useQuizTimer and useQuizSession hooks.
+we can do this 
+
+Add Vitest for scoring.ts. Scoring is where the bugs above live, and the empty coverage/ folder suggests tests were planned. Include a data test that checks ids are unique and correctAnswer is in options.
+
+we can do this 
+
+Leftover template files: App.css is never imported, the default README is still there, and the favicon, hero.png and the react and vite SVGs look unused. The page <title> is still the repo name.
+
+we can work on this or should
+
+dist/ is older than your latest App.tsx (17:04 vs 17:22). Rebuild before deploying, and leave __MACOSX out of the zip.
+Privacy: the questions include his real surname (Q50), first salary, budgets and family details, and Q42 has “involved in fraud” as an option. If the site is public, add <meta name="robots" content="noindex"> and have Roy approve those items. I’d reconsider Q42 in particular.
+
+remove the involved in fraud please
