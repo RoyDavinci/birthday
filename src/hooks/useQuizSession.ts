@@ -5,7 +5,7 @@ import type { RecordedAnswer } from "../types/quiz";
 export type SessionScreen = "roundIntro" | "quiz";
 
 export interface SavedSession {
-	version: 3;
+	version: 4;
 	screen: SessionScreen;
 	playerName: string;
 	currentIndex: number;
@@ -29,7 +29,7 @@ interface SessionInput {
 	optionOrders: Record<number, string[]>;
 }
 
-const STORAGE_KEY = "roydavinci-birthday-quiz-session-v3";
+const STORAGE_KEY = "roydavinci-birthday-quiz-session-v4";
 
 function clearStoredSession() {
 	try {
@@ -45,7 +45,7 @@ function readSavedSession(): SavedSession | null {
 		if (!raw) return null;
 		const saved = JSON.parse(raw) as Partial<SavedSession>;
 		const valid =
-			saved.version === 3 &&
+			saved.version === 4 &&
 			(saved.screen === "roundIntro" || saved.screen === "quiz") &&
 			typeof saved.playerName === "string" &&
 			Boolean(saved.playerName.trim()) &&
@@ -84,7 +84,7 @@ export function useQuizSession(input: SessionInput) {
 		}
 		if (input.screen !== "roundIntro" && input.screen !== "quiz") return;
 		const snapshot: SavedSession = {
-			version: 3,
+			version: 4,
 			screen: input.screen,
 			playerName: input.playerName,
 			currentIndex: input.currentIndex,

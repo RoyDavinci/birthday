@@ -21,6 +21,7 @@ import {
 } from "./hooks/quizReducer";
 import type { Screen } from "./components/QuizAppContext";
 import { QuizAppProvider } from "./components/QuizAppProvider";
+import { RoundRecapScreen } from "./components/RoundRecapScreen";
 import { WelcomeScreen } from "./components/WelcomeScreen";
 import { RoundIntroScreen } from "./components/RoundIntroScreen";
 import { ResultsScreen } from "./components/ResultsScreen";
@@ -59,60 +60,53 @@ const ROUND_INTROS: Record<number, { subtitle: string; description: string }> =
 	{
 		1: {
 			subtitle: "Every story starts somewhere.",
-			description:
-				"Let’s see how well you know RoyDavinci’s roots, upbringing, and signature expressions.",
+			description: "Let’s see how well you know RoyDavinci’s roots, upbringing, and signature expressions.",
 		},
 		2: {
-			subtitle: "Food, drinks, and football.",
-			description:
-				"From jollof rice to Manchester United, test your knowledge of the favourites.",
+			subtitle: "Naija is a language of its own.",
+			description: "Pidgin and street slang. If you know, you know.",
 		},
 		3: {
-			subtitle: "Time to look beyond Roy.",
-			description:
-				"Capitals, planets, chemistry, and football history. Let’s see what is in your head.",
+			subtitle: "Food, drinks, and football.",
+			description: "From jollof rice to Manchester United, test your knowledge of the favourites.",
 		},
 		4: {
-			subtitle: "You know the shows, right?",
-			description:
-				"TV dramas, anime, and classic Nigerian television. No spoilers needed.",
+			subtitle: "Time to look beyond Roy.",
+			description: "Capitals, planets, chemistry, and football history. Let’s see what is in your head.",
 		},
 		5: {
-			subtitle: "You think you know the personality?",
-			description:
-				"The habits, reactions, and little things that make RoyDavinci RoyDavinci.",
+			subtitle: "You know the shows, right?",
+			description: "TV dramas, anime, and classic Nigerian television. No spoilers needed.",
 		},
 		6: {
-			subtitle: "Calculators are not invited.",
-			description:
-				"Simple sums, percentages, and naira maths. Work it out before the clock does.",
+			subtitle: "You think you know the personality?",
+			description: "The habits, reactions, and little things that make RoyDavinci RoyDavinci.",
 		},
 		7: {
-			subtitle: "Developer mode: ON.",
-			description:
-				"Programming history, favourite technologies, and the career goal. Let’s get technical.",
+			subtitle: "Calculators are not invited.",
+			description: "Simple sums, percentages, and naira maths. Work it out before the clock does.",
 		},
 		8: {
-			subtitle: "Big dreams, bigger plans.",
-			description:
-				"Money guesses, future plans, and the destinations RoyDavinci wants to see.",
+			subtitle: "Developer mode: ON.",
+			description: "Programming history, favourite technologies, and the career goal. Let’s get technical.",
 		},
 		9: {
-			subtitle: "Naija no dey carry last.",
-			description:
-				"History, books, music, and geography. How Naija are you, really?",
+			subtitle: "Big dreams, bigger plans.",
+			description: "Money guesses, future plans, and the destinations RoyDavinci wants to see.",
 		},
 		10: {
-			subtitle: "It’s about the people.",
-			description:
-				"Find out whether you know what RoyDavinci values in friendship and relationships.",
+			subtitle: "Naija no dey carry last.",
+			description: "History, books, music, and geography. How Naija are you, really?",
 		},
 		11: {
-			subtitle: "Read carefully. Think twice.",
-			description:
-				"Riddles and logic puzzles built to trip up fast thinkers.",
+			subtitle: "It’s about the people.",
+			description: "Find out whether you know what RoyDavinci values in friendship and relationships.",
 		},
 		12: {
+			subtitle: "Read carefully. Think twice.",
+			description: "Riddles and logic puzzles built to trip up fast thinkers.",
+		},
+		13: {
 			subtitle: "Only the real ones know.",
 			description: "The final round has the deep cuts. Finish strong!",
 		},
@@ -157,18 +151,18 @@ function getResultTitle(percentage: number) {
 
 function getResultMessage(percentage: number) {
 	if (percentage >= 90) {
-		return "You know RoyDavinci almost too well. Who gave you the inside information?";
+		return "You know me almost too well. Who gave you the inside information? 🌚";
 	}
 	if (percentage >= 75) {
-		return "You have clearly been paying attention. You are one of the real ones.";
+		return "You’ve clearly been paying attention. You’re one of the real ones.";
 	}
 	if (percentage >= 60) {
-		return "You know a fair amount. There are still a few RoyDavinci facts to learn.";
+		return "You know a fair amount, but there are still a few things about me you need to learn.";
 	}
 	if (percentage >= 40) {
-		return "You know some things, but we need to have a serious question-and-answer session.";
+		return "You know some things, but we need to sit down for a proper Q&A session.";
 	}
-	return "Omo! You might need to spend more time getting to know the birthday star.";
+	return "Omo! Spend more time getting to know me, abeg. 🌚";
 }
 
 function SoundToggle({
@@ -246,6 +240,8 @@ export default function App() {
 
 	const question = QUESTIONS[currentIndex];
 	const isLastQuestion = currentIndex === QUESTIONS.length - 1;
+	const isRoundEnd =
+		isLastQuestion || QUESTIONS[currentIndex + 1]?.round !== question.round;
 	const recordedAnswer = answers[question.id];
 
 	const totalScore = useMemo(
@@ -431,6 +427,20 @@ export default function App() {
 	function handleNextQuestion() {
 		if (!hasAnswered) return;
 
+		// The last question of every round shows a recap (and the badge) first.
+		if (isRoundEnd) {
+			setScreen("roundRecap");
+			return;
+		}
+
+		setCurrentIndex(currentIndex + 1);
+		setResponse("");
+		setHasAnswered(false);
+		setHintUsed(false);
+		setDeadlineAt(Date.now() + QUESTION_SECONDS * 1000);
+	}
+
+	function handleContinueFromRecap() {
 		if (isLastQuestion) {
 			playSound("birthday", muted);
 			clearSession();
@@ -439,21 +449,12 @@ export default function App() {
 			return;
 		}
 
-		const nextIndex = currentIndex + 1;
-		const currentRound = question.round;
-		const nextRound = QUESTIONS[nextIndex].round;
-
-		setCurrentIndex(nextIndex);
+		setCurrentIndex(currentIndex + 1);
 		setResponse("");
 		setHasAnswered(false);
 		setHintUsed(false);
-
-		if (nextRound !== currentRound) {
-			setDeadlineAt(null);
-			setScreen("roundIntro");
-		} else {
-			setDeadlineAt(Date.now() + QUESTION_SECONDS * 1000);
-		}
+		setDeadlineAt(null);
+		setScreen("roundIntro");
 	}
 
 	function handleStartRound() {
@@ -556,7 +557,7 @@ export default function App() {
 
 	function handleExitQuiz() {
 		setSavedSession({
-			version: 3,
+			version: 4,
 			screen: "quiz",
 			playerName,
 			currentIndex,
@@ -643,6 +644,8 @@ export default function App() {
 		handleNextQuestion,
 		handleExitQuiz,
 		isLastQuestion,
+		isRoundEnd,
+		handleContinueFromRecap,
 		percentage,
 		royPercentage,
 		generalPercentage,
@@ -690,6 +693,7 @@ export default function App() {
 				<RoundIntroScreen />
 				<ResultsScreen />
 				<QuizScreen />
+				<RoundRecapScreen />
 			</>
 		</QuizAppProvider>
 	);

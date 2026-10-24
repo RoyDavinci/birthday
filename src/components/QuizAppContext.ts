@@ -2,7 +2,12 @@ import { createContext, useContext, type Dispatch, type FormEvent, type RefObjec
 import type { QuizQuestion, RecordedAnswer } from "../types/quiz";
 import type { SavedSession } from "../hooks/useQuizSession";
 
-export type Screen = "welcome" | "roundIntro" | "quiz" | "results";
+export type Screen =
+	| "welcome"
+	| "roundIntro"
+	| "quiz"
+	| "roundRecap"
+	| "results";
 export interface RoundScore {
 	round: number;
 	title: string;
@@ -46,6 +51,8 @@ export interface QuizAppContextValue {
 	handleNextQuestion: () => void;
 	handleExitQuiz: () => void;
 	isLastQuestion: boolean;
+	isRoundEnd: boolean;
+	handleContinueFromRecap: () => void;
 	percentage: number;
 	royPercentage: number;
 	generalPercentage: number;

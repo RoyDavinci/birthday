@@ -59,7 +59,7 @@ export function QuizScreen() {
 		isCorrect,
 		correctAnswer,
 		handleExitQuiz,
-		isLastQuestion,
+		isRoundEnd,
 		handleNextQuestion,
 		streak,
 		hintUsed,
@@ -368,10 +368,10 @@ export function QuizScreen() {
 														: isCorrect
 															? recordedAnswer?.hintUsed
 																? "🎉 Correct! (Hint used, so half points.)"
-																: "🎉 Correct! You know your stuff."
+																: "🎉 Correct! You sabi!"
 															: recordedAnswer?.earned
 																? "Close one! Partial points earned."
-																: "Not quite!"}
+																: "Not quite! 🌚"}
 												</p>
 												<p className='mt-1 text-sm leading-6 text-white/70'>
 													{recordedAnswer?.timedOut
@@ -384,7 +384,9 @@ export function QuizScreen() {
 												</p>
 												{question.funFact && (
 													<p className='mt-3 border-t border-white/10 pt-3 text-sm leading-6 text-party-yellow/90'>
-														<span className='font-extrabold'>🎈 Fun fact: </span>
+														<span className='font-extrabold'>
+																{theme.kind === "roy" ? "🌚 Roy says: " : "🎈 Fun fact: "}
+															</span>
 														{question.funFact}
 													</p>
 												)}
@@ -419,7 +421,7 @@ export function QuizScreen() {
 											onClick={handleNextQuestion}
 											className='btn-party inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-bold'
 										>
-											{isLastQuestion ? "See my results 🎂" : "Next question"}
+											{isRoundEnd ? "Finish round" : "Next question"}
 											<ArrowRight size={17} />
 										</button>
 									)}

@@ -69,4 +69,22 @@ describe("question bank integrity", () => {
 		const lastRound = QUESTIONS[QUESTIONS.length - 1].round;
 		expect(ROUND_THEMES[lastRound].kind).toBe("roy");
 	});
+
+	it("has a Naija slang round placed between two RoyDavinci rounds", () => {
+		const slang = QUESTIONS.filter((question) => question.roundTitle === "Naija Slang");
+		expect(slang).toHaveLength(5);
+		const round = slang[0].round;
+		expect(ROUND_THEMES[round - 1].kind).toBe("roy");
+		expect(ROUND_THEMES[round + 1].kind).toBe("roy");
+	});
+
+	it("writes RoyDavinci fun facts in the first person", () => {
+		for (const question of QUESTIONS) {
+			if (ROUND_THEMES[question.round].kind === "roy" && question.funFact) {
+				expect(question.funFact, `question ${question.id}`).not.toMatch(
+					/\b(he|his|him)\b/i,
+				);
+			}
+		}
+	});
 });

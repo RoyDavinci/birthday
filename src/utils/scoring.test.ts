@@ -118,4 +118,18 @@ describe("scoreAnswer", () => {
 		expect(scoreAnswer(question(73), "Achebe")).toBe(10);
 		expect(scoreAnswer(question(73), "Soyinka")).toBe(0);
 	});
+
+	it("scores the Naija slang round", () => {
+		expect(scoreAnswer(question(81), "To relocate abroad")).toBe(10);
+		expect(scoreAnswer(question(81), "To start a business")).toBe(0);
+		expect(scoreAnswer(question(85), "Sabi")).toBe(10);
+	});
+
+	it("keeps Q12 consistent: the beach resort is the answer", () => {
+		const q12 = question(12);
+		if (q12.type !== "choice") throw new Error("Q12 must be a choice question");
+		expect(q12.correctAnswer).toBe("A beach resort");
+		expect(q12.funFact ?? "").not.toMatch(/cubana/i);
+		expect(q12.options.some((option) => /cubana/i.test(option))).toBe(false);
+	});
 });

@@ -318,7 +318,7 @@ export function ResultsScreen() {
 											Anything you want to tell Roy?
 										</h2>
 										<p className='mt-1 text-sm leading-5 text-white/65'>
-											Optional: a birthday wish, a memory, a roast, a question.
+											Optional: a (belated) birthday wish, a memory, a roast, a question.
 										</p>
 									</div>
 								</div>
@@ -431,7 +431,11 @@ export function ResultsScreen() {
 											</p>
 											{item.funFact && (
 												<p className='mt-2 text-sm leading-6 text-party-yellow/85'>
-													<span className='font-extrabold'>🎈 Fun fact: </span>
+													<span className='font-extrabold'>
+															{getRoundTheme(item.round).kind === "roy"
+																? "🌚 Roy says: "
+																: "🎈 Fun fact: "}
+														</span>
 													{item.funFact}
 												</p>
 											)}
