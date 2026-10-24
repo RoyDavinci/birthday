@@ -127,12 +127,12 @@ export function ResultsScreen() {
 						>
 							<div
 								ref={resultsCardRef}
-								className='rounded-2xl bg-[#1d1033] p-2 sm:p-4'
+								className='rounded-2xl bg-party-panel p-2 sm:p-4'
 							>
 								<div className='text-center'>
 									<div className='relative mx-auto mt-6 w-fit'>
 										<PartyHat className='absolute -top-9 left-1/2 z-10 h-12 w-10 -translate-x-1/2 rotate-12' />
-										<div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-[#e11d74] to-[#ff9f45] shadow-[0_0_48px_rgba(255,95,162,0.35)]'>
+										<div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-[#e11d74] to-party-orange shadow-[0_0_48px_rgba(255,95,162,0.35)]'>
 											<Cake className='text-white' size={32} />
 										</div>
 									</div>
@@ -140,11 +140,11 @@ export function ResultsScreen() {
 										🎉 Challenge complete
 									</p>
 									<h1 className='mt-3 text-3xl font-bold sm:text-5xl'>
-										Well played, <span className='party-text'>{playerName}</span>
-										!
+										Well played,{" "}
+										<span className='party-text'>{playerName}</span>!
 									</h1>
 
-									<div className='mt-7 rounded-3xl border border-party-yellow/25 bg-party-yellow/[0.06] p-6'>
+									<div className='mt-7 rounded-3xl border border-party-yellow/25 bg-party-yellow/6 p-6'>
 										<p className='text-sm text-white/65'>Your final score</p>
 										<p className='mt-2 font-display text-5xl font-bold tabular-nums sm:text-6xl'>
 											{formatPoints(totalScore)}
@@ -167,13 +167,17 @@ export function ResultsScreen() {
 
 										<div className='mx-auto mt-5 grid max-w-sm grid-cols-2 gap-3 text-left'>
 											<div className='rounded-xl border border-party-pink/30 bg-party-pink/10 p-3'>
-												<p className='text-xs text-white/60'>About RoyDavinci</p>
+												<p className='text-xs text-white/60'>
+													About RoyDavinci
+												</p>
 												<p className='mt-1 font-display text-2xl font-bold tabular-nums'>
 													{royPercentage}%
 												</p>
 											</div>
 											<div className='rounded-xl border border-party-sky/30 bg-party-sky/10 p-3'>
-												<p className='text-xs text-white/60'>General knowledge</p>
+												<p className='text-xs text-white/60'>
+													General knowledge
+												</p>
 												<p className='mt-1 font-display text-2xl font-bold tabular-nums'>
 													{generalPercentage}%
 												</p>
@@ -243,13 +247,15 @@ export function ResultsScreen() {
 														background: `${round.theme.color}1f`,
 													}}
 												>
-													<span aria-hidden='true'>{BADGE_MEDALS[round.tier!]}</span>
+													<span aria-hidden='true'>
+														{BADGE_MEDALS[round.tier!]}
+													</span>
 													{round.theme.badge}
 												</li>
 											))}
 										</ul>
 									) : (
-										<p className='rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm text-white/60'>
+										<p className='rounded-xl border border-white/10 bg-white/3 p-4 text-sm text-white/60'>
 											No badges this time. Score 40% or more in a round to earn
 											one. Play again and collect them all!
 										</p>
@@ -262,7 +268,7 @@ export function ResultsScreen() {
 										{rounds.map((round) => (
 											<div
 												key={round.round}
-												className='rounded-xl border border-white/10 bg-white/[0.03] p-3'
+												className='rounded-xl border border-white/10 bg-white/3 p-3'
 											>
 												<div className='flex items-center justify-between gap-3 text-sm'>
 													<span className='min-w-0 text-white/85'>
@@ -295,14 +301,14 @@ export function ResultsScreen() {
 									</div>
 								</div>
 
-								<p className='mt-8 rounded-2xl border-2 border-dashed border-party-yellow/45 bg-party-yellow/[0.06] p-4 text-center text-xs font-extrabold uppercase tracking-[0.2em] text-party-yellow/90'>
+								<p className='mt-8 rounded-2xl border-2 border-dashed border-party-yellow/45 bg-party-yellow/6 p-4 text-center text-xs font-extrabold uppercase tracking-[0.2em] text-party-yellow/90'>
 									🎂 How well do you know RoyDavinci?
 								</p>
 							</div>
 
 							<section
 								aria-labelledby='tell-roy-heading'
-								className='mt-6 rounded-2xl border-2 border-dashed border-party-pink/45 bg-party-pink/[0.06] p-5'
+								className='mt-6 rounded-2xl border-2 border-dashed border-party-pink/45 bg-party-pink/6 p-5'
 							>
 								<div className='flex items-center gap-3'>
 									<img
@@ -318,7 +324,8 @@ export function ResultsScreen() {
 											Anything you want to tell Roy?
 										</h2>
 										<p className='mt-1 text-sm leading-5 text-white/65'>
-											Optional: a (belated) birthday wish, a memory, a roast, a question.
+											Optional: a (belated) birthday wish, a memory, a roast, a
+											question.
 										</p>
 									</div>
 								</div>
@@ -350,7 +357,7 @@ export function ResultsScreen() {
 										type='checkbox'
 										checked={includeScore}
 										onChange={(event) => setIncludeScore(event.target.checked)}
-										className='h-4 w-4 accent-[#ff5fa2]'
+										className='h-4 w-4 accent-party-pink'
 									/>
 									Include my score in the message
 								</label>
@@ -412,7 +419,7 @@ export function ResultsScreen() {
 									{QUESTIONS.map((item, index) => (
 										<article
 											key={item.id}
-											className='rounded-xl border border-white/10 bg-white/[0.03] p-4'
+											className='rounded-xl border border-white/10 bg-white/3 p-4'
 										>
 											<p className='text-xs font-extrabold uppercase tracking-wider text-white/50'>
 												Question {index + 1} · {item.points} points
@@ -432,10 +439,10 @@ export function ResultsScreen() {
 											{item.funFact && (
 												<p className='mt-2 text-sm leading-6 text-party-yellow/85'>
 													<span className='font-extrabold'>
-															{getRoundTheme(item.round).kind === "roy"
-																? "🌚 Roy says: "
-																: "🎈 Fun fact: "}
-														</span>
+														{getRoundTheme(item.round).kind === "roy"
+															? "🌚 Roy says: "
+															: "🎈 Fun fact: "}
+													</span>
 													{item.funFact}
 												</p>
 											)}

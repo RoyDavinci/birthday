@@ -89,14 +89,14 @@ export function WelcomeScreen() {
 										<img
 											src={royPhoto}
 											alt='RoyDavinci, the birthday star'
-											className='h-24 w-24 rounded-full border-4 border-[#1d1033] object-cover object-[50%_18%] sm:h-28 sm:w-28'
+											className='h-24 w-24 rounded-full border-4 border-party-panel object-cover object-[50%_18%] sm:h-28 sm:w-28'
 										/>
 									</div>
 								</div>
 							</div>
 
 							<div className='text-center'>
-								<p className='inline-block -rotate-2 rounded-full bg-party-yellow px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.1em] text-[#2b1055] shadow-lg sm:px-4 sm:text-sm sm:tracking-[0.18em]'>
+								<p className='inline-block -rotate-2 rounded-full bg-party-yellow px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-widest text-[#2b1055] shadow-lg sm:px-4 sm:text-sm sm:tracking-[0.18em]'>
 									🎂 The ultimate birthday challenge
 								</p>
 								<h1 className='mt-5 text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl'>
@@ -108,13 +108,17 @@ export function WelcomeScreen() {
 								</h1>
 								<p className='mx-auto mt-5 max-w-md text-sm leading-6 text-white/70 sm:text-base'>
 									The stories, the vibes, the Naija life, the tech, and the
-									things only the real ones know. Plus general knowledge, quick maths and brain teasers to keep you sharp.
+									things only the real ones know. Plus general knowledge, quick
+									maths and brain teasers to keep you sharp.
 								</p>
 							</div>
 
 							<div className='mt-8 grid grid-cols-3 gap-2 sm:gap-3'>
 								<div className='rounded-2xl border border-party-pink/30 bg-party-pink/10 p-3 text-center sm:p-4'>
-									<Gamepad2 className='mx-auto mb-2 text-party-pink' size={21} />
+									<Gamepad2
+										className='mx-auto mb-2 text-party-pink'
+										size={21}
+									/>
 									<p className='font-display text-xl font-bold'>
 										{QUESTIONS.length}
 									</p>
@@ -123,7 +127,10 @@ export function WelcomeScreen() {
 									</p>
 								</div>
 								<div className='rounded-2xl border border-party-yellow/30 bg-party-yellow/10 p-3 text-center sm:p-4'>
-									<Clock3 className='mx-auto mb-2 text-party-yellow' size={21} />
+									<Clock3
+										className='mx-auto mb-2 text-party-yellow'
+										size={21}
+									/>
 									<p className='font-display text-xl font-bold'>30 sec</p>
 									<p className='mt-1 text-[11px] text-white/60 sm:text-xs'>
 										Per question

@@ -60,7 +60,8 @@ const ROUND_INTROS: Record<number, { subtitle: string; description: string }> =
 	{
 		1: {
 			subtitle: "Every story starts somewhere.",
-			description: "Let’s see how well you know RoyDavinci’s roots, upbringing, and signature expressions.",
+			description:
+				"Let’s see how well you know RoyDavinci’s roots, upbringing, and signature expressions.",
 		},
 		2: {
 			subtitle: "Naija is a language of its own.",
@@ -68,39 +69,48 @@ const ROUND_INTROS: Record<number, { subtitle: string; description: string }> =
 		},
 		3: {
 			subtitle: "Food, drinks, and football.",
-			description: "From jollof rice to Manchester United, test your knowledge of the favourites.",
+			description:
+				"From jollof rice to Manchester United, test your knowledge of the favourites.",
 		},
 		4: {
 			subtitle: "Time to look beyond Roy.",
-			description: "Capitals, planets, chemistry, and football history. Let’s see what is in your head.",
+			description:
+				"Capitals, planets, chemistry, and football history. Let’s see what is in your head.",
 		},
 		5: {
 			subtitle: "You know the shows, right?",
-			description: "TV dramas, anime, and classic Nigerian television. No spoilers needed.",
+			description:
+				"TV dramas, anime, and classic Nigerian television. No spoilers needed.",
 		},
 		6: {
 			subtitle: "You think you know the personality?",
-			description: "The habits, reactions, and little things that make RoyDavinci RoyDavinci.",
+			description:
+				"The habits, reactions, and little things that make RoyDavinci RoyDavinci.",
 		},
 		7: {
 			subtitle: "Calculators are not invited.",
-			description: "Simple sums, percentages, and naira maths. Work it out before the clock does.",
+			description:
+				"Simple sums, percentages, and naira maths. Work it out before the clock does.",
 		},
 		8: {
 			subtitle: "Developer mode: ON.",
-			description: "Programming history, favourite technologies, and the career goal. Let’s get technical.",
+			description:
+				"Programming history, favourite technologies, and the career goal. Let’s get technical.",
 		},
 		9: {
 			subtitle: "Big dreams, bigger plans.",
-			description: "Money guesses, future plans, and the destinations RoyDavinci wants to see.",
+			description:
+				"Money guesses, future plans, and the destinations RoyDavinci wants to see.",
 		},
 		10: {
 			subtitle: "Naija no dey carry last.",
-			description: "History, books, music, and geography. How Naija are you, really?",
+			description:
+				"History, books, music, and geography. How Naija are you, really?",
 		},
 		11: {
 			subtitle: "It’s about the people.",
-			description: "Find out whether you know what RoyDavinci values in friendship and relationships.",
+			description:
+				"Find out whether you know what RoyDavinci values in friendship and relationships.",
 		},
 		12: {
 			subtitle: "Read carefully. Think twice.",
@@ -178,7 +188,7 @@ function SoundToggle({
 			onClick={onToggle}
 			aria-label={muted ? "Turn sounds on" : "Mute sounds"}
 			aria-pressed={muted}
-			className='fixed right-3 top-10 z-30 inline-flex items-center gap-2 rounded-full border border-white/15 bg-[#1d1033]/80 px-3 py-2 text-sm text-white/85 backdrop-blur transition hover:bg-white/10 sm:right-4'
+			className='fixed right-3 top-10 z-30 inline-flex items-center gap-2 rounded-full border border-white/15 bg-party-panel/80 px-3 py-2 text-sm text-white/85 backdrop-blur transition hover:bg-white/10 sm:right-4'
 		>
 			{muted ? <VolumeX size={17} /> : <Volume2 size={17} />}
 			<span className='hidden sm:inline'>{muted ? "Muted" : "Sound on"}</span>

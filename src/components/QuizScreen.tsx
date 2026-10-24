@@ -80,7 +80,9 @@ export function QuizScreen() {
 								<Cake className='shrink-0 text-party-pink' size={21} />
 								<span className='truncate text-xs font-extrabold uppercase tracking-[0.15em] text-white/75 sm:text-sm'>
 									<span className='sm:hidden'>RoyDavinci Quiz</span>
-									<span className='hidden sm:inline'>RoyDavinci Birthday Quiz</span>
+									<span className='hidden sm:inline'>
+										RoyDavinci Birthday Quiz
+									</span>
 								</span>
 							</div>
 							<div className='shrink-0 rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs text-white/70'>
@@ -199,33 +201,33 @@ export function QuizScreen() {
 								</h1>
 
 								<div className='mt-3 flex items-start justify-between gap-3'>
-								<p className='text-sm text-white/55'>
-									{question.type === "choice"
-										? "Choose one answer."
-										: question.type === "text"
-											? "Type your answer below."
-											: question.id >= 31 && question.id <= 33
-												? "Enter an amount in naira; commas and shorthand are accepted."
-												: "Enter a whole number. You can earn partial points for a close guess."}
-								</p>
-								{!hasAnswered && (
-									<button
-										type='button'
-										onClick={handleUseHint}
-										disabled={!canUseHint}
-										aria-label='Use a hint. It costs half the points.'
-										className='inline-flex shrink-0 items-center gap-1.5 rounded-full border border-party-yellow/40 bg-party-yellow/10 px-3 py-1.5 text-xs font-bold text-party-yellow transition enabled:hover:bg-party-yellow/20 disabled:cursor-default disabled:opacity-60'
-									>
-										<Lightbulb size={14} />
-										{hintUsed ? "Hint used" : "Hint · ½ points"}
-									</button>
-								)}
-							</div>
+									<p className='text-sm text-white/55'>
+										{question.type === "choice"
+											? "Choose one answer."
+											: question.type === "text"
+												? "Type your answer below."
+												: question.id >= 31 && question.id <= 33
+													? "Enter an amount in naira; commas and shorthand are accepted."
+													: "Enter a whole number. You can earn partial points for a close guess."}
+									</p>
+									{!hasAnswered && (
+										<button
+											type='button'
+											onClick={handleUseHint}
+											disabled={!canUseHint}
+											aria-label='Use a hint. It costs half the points.'
+											className='inline-flex shrink-0 items-center gap-1.5 rounded-full border border-party-yellow/40 bg-party-yellow/10 px-3 py-1.5 text-xs font-bold text-party-yellow transition enabled:hover:bg-party-yellow/20 disabled:cursor-default disabled:opacity-60'
+										>
+											<Lightbulb size={14} />
+											{hintUsed ? "Hint used" : "Hint · ½ points"}
+										</button>
+									)}
+								</div>
 
 								{hintUsed && hintText && !hasAnswered && (
 									<p
 										role='status'
-										className='mt-4 flex items-start gap-2 rounded-xl border border-party-yellow/30 bg-party-yellow/[0.08] px-3 py-2.5 text-sm leading-6 text-party-yellow'
+										className='mt-4 flex items-start gap-2 rounded-xl border border-party-yellow/30 bg-party-yellow/8 px-3 py-2.5 text-sm leading-6 text-party-yellow'
 									>
 										<Lightbulb size={16} className='mt-1 shrink-0' />
 										<span>{hintText}</span>
@@ -241,7 +243,8 @@ export function QuizScreen() {
 													const correct = option === question.correctAnswer;
 													const eliminated =
 														!hasAnswered && eliminatedOptions.includes(option);
-													const color = OPTION_COLORS[index % OPTION_COLORS.length];
+													const color =
+														OPTION_COLORS[index % OPTION_COLORS.length];
 													let optionStyle = `border-white/12 bg-white/[0.03] ${color.hover} enabled:hover:-translate-y-0.5`;
 
 													if (eliminated) {
@@ -380,13 +383,17 @@ export function QuizScreen() {
 															: "No answer was entered before time ran out. "
 														: `You earned ${recordedAnswer?.earned ?? 0} out of ${question.points} points. `}
 													Correct answer:{" "}
-													<strong className='text-white'>{correctAnswer}</strong>
+													<strong className='text-white'>
+														{correctAnswer}
+													</strong>
 												</p>
 												{question.funFact && (
 													<p className='mt-3 border-t border-white/10 pt-3 text-sm leading-6 text-party-yellow/90'>
 														<span className='font-extrabold'>
-																{theme.kind === "roy" ? "🌚 Roy says: " : "🎈 Fun fact: "}
-															</span>
+															{theme.kind === "roy"
+																? "🌚 Roy says: "
+																: "🎈 Fun fact: "}
+														</span>
 														{question.funFact}
 													</p>
 												)}
