@@ -83,40 +83,50 @@ const ROUND_INTROS: Record<number, { subtitle: string; description: string }> =
 				"TV dramas, anime, and classic Nigerian television. No spoilers needed.",
 		},
 		6: {
+			subtitle: "What’s been happening?",
+			description:
+				"Football, awards, and Nigerian headlines from this year. Let’s see if you’ve been paying attention to the news.",
+		},
+		7: {
 			subtitle: "You think you know the personality?",
 			description:
 				"The habits, reactions, and little things that make RoyDavinci RoyDavinci.",
 		},
-		7: {
+		8: {
 			subtitle: "Calculators are not invited.",
 			description:
 				"Simple sums, percentages, and naira maths. Work it out before the clock does.",
 		},
-		8: {
+		9: {
 			subtitle: "Developer mode: ON.",
 			description:
 				"Programming history, favourite technologies, and the career goal. Let’s get technical.",
 		},
-		9: {
+		10: {
 			subtitle: "Big dreams, bigger plans.",
 			description:
 				"Money guesses, future plans, and the destinations RoyDavinci wants to see.",
 		},
-		10: {
+		11: {
 			subtitle: "Naija no dey carry last.",
 			description:
 				"History, books, music, and geography. How Naija are you, really?",
 		},
-		11: {
+		12: {
 			subtitle: "It’s about the people.",
 			description:
 				"Find out whether you know what RoyDavinci values in friendship and relationships.",
 		},
-		12: {
+		13: {
+			subtitle: "This is how I actually move.",
+			description:
+				"Real reactions to real situations. If you know me, you’ll know what I do.",
+		},
+		14: {
 			subtitle: "Read carefully. Think twice.",
 			description: "Riddles and logic puzzles built to trip up fast thinkers.",
 		},
-		13: {
+		15: {
 			subtitle: "Only the real ones know.",
 			description: "The final round has the deep cuts. Finish strong!",
 		},
@@ -567,7 +577,7 @@ export default function App() {
 
 	function handleExitQuiz() {
 		setSavedSession({
-			version: 4,
+			version: 5,
 			screen: "quiz",
 			playerName,
 			currentIndex,

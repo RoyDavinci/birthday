@@ -132,4 +132,12 @@ describe("scoreAnswer", () => {
 		expect(q12.funFact ?? "").not.toMatch(/cubana/i);
 		expect(q12.options.some((option) => /cubana/i.test(option))).toBe(false);
 	});
+
+	it("scores the Current Affairs and Roy in Real Life rounds", () => {
+		expect(scoreAnswer(question(91), "Spain")).toBe(10);
+		expect(scoreAnswer(question(91), "Argentina")).toBe(0);
+		expect(scoreAnswer(question(95), "Navi Pillay")).toBe(10);
+		expect(scoreAnswer(question(105), "Hisses and does it himself")).toBe(15);
+		expect(scoreAnswer(question(105), "Reports it straight to the manager")).toBe(0);
+	});
 });

@@ -87,4 +87,13 @@ describe("question bank integrity", () => {
 			}
 		}
 	});
+
+	it("has Current Affairs and Roy in Real Life rounds", () => {
+		const titles = new Set(QUESTIONS.map((question) => question.roundTitle));
+		expect(titles.has("Current Affairs")).toBe(true);
+		expect(titles.has("Roy in Real Life")).toBe(true);
+		const real = QUESTIONS.filter((question) => question.roundTitle === "Roy in Real Life");
+		expect(real.length).toBeGreaterThanOrEqual(8);
+		expect(ROUND_THEMES[real[0].round].kind).toBe("roy");
+	});
 });

@@ -249,7 +249,7 @@ export const QUESTIONS: QuizQuestion[] = [
 		],
 		points: 15,
 		hint: "They play their home games at Old Trafford.",
-		funFact: "I support Manchester United. Glory, glory.",
+		funFact: "I support Manchester United, though I rarely watch football these days because they always lose. 🌚",
 	},
 	{
 		id: 12,
@@ -423,10 +423,107 @@ export const QUESTIONS: QuizQuestion[] = [
 		points: 15,
 		funFact: "I also enjoy Sherlock, Suits, Breaking Bad, Mad Men and Boston Legal.",
 	},
-	// ROUND 6 — PERSONALITY CHECK
+	// ROUND 6 — CURRENT AFFAIRS
+	{
+		id: 91,
+		round: 6,
+		roundTitle: "Current Affairs",
+		type: "choice",
+		prompt: "Which country won the 2026 FIFA World Cup?",
+		options: [
+			"Spain",
+			"Argentina",
+			"France",
+			"England",
+		],
+		correctAnswer: "Spain",
+		points: 10,
+		funFact: "Spain beat Argentina 1–0 after extra time in the final on 19 July 2026. It was their second World Cup title, after 2010.",
+	},
+	{
+		id: 92,
+		round: 6,
+		roundTitle: "Current Affairs",
+		type: "choice",
+		prompt: "Who scored the only goal in the 2026 World Cup final?",
+		options: [
+			"Ferran Torres",
+			"Mikel Oyarzabal",
+			"Mikel Merino",
+			"Rodri",
+		],
+		correctAnswer: "Ferran Torres",
+		points: 10,
+		funFact: "Ferran Torres scored in extra time, in the 106th minute, at MetLife Stadium in New Jersey.",
+	},
+	{
+		id: 93,
+		round: 6,
+		roundTitle: "Current Affairs",
+		type: "choice",
+		prompt: "Which country won the 2025 Africa Cup of Nations, played in Morocco?",
+		options: [
+			"Senegal",
+			"Morocco",
+			"Egypt",
+			"Nigeria",
+		],
+		correctAnswer: "Senegal",
+		points: 10,
+		funFact: "Senegal beat hosts Morocco 1–0 after extra time in the final on 18 January 2026.",
+	},
+	{
+		id: 94,
+		round: 6,
+		roundTitle: "Current Affairs",
+		type: "choice",
+		prompt: "How did Nigeria finish at the 2025 Africa Cup of Nations?",
+		options: [
+			"Third place",
+			"Champions",
+			"Runners-up",
+			"Fourth place",
+		],
+		correctAnswer: "Third place",
+		points: 10,
+		funFact: "Nigeria lost to hosts Morocco on penalties in the semi-final, then beat Egypt 4–2 on penalties to take bronze.",
+	},
+	{
+		id: 95,
+		round: 6,
+		roundTitle: "Current Affairs",
+		type: "choice",
+		prompt: "Who won the 2026 Nobel Peace Prize?",
+		options: [
+			"Navi Pillay",
+			"Ellen Johnson Sirleaf",
+			"Leymah Gbowee",
+			"Denis Mukwege",
+		],
+		correctAnswer: "Navi Pillay",
+		points: 10,
+		funFact: "Navi Pillay, a South African judge and former UN human rights chief, was announced as the winner on 9 October 2026.",
+	},
+	{
+		id: 96,
+		round: 6,
+		roundTitle: "Current Affairs",
+		type: "choice",
+		prompt: "In which year are Nigeria’s next general elections due?",
+		options: [
+			"2027",
+			"2026",
+			"2028",
+			"2029",
+		],
+		correctAnswer: "2027",
+		points: 10,
+		funFact: "Nigeria holds general elections every four years. The last ones were in 2023.",
+	},
+	// ROUND 7 — PERSONALITY CHECK
 	{
 		id: 19,
-		round: 6,
+		round: 7,
 		roundTitle: "Personality Check",
 		type: "choice",
 		prompt: "How does RoyDavinci tend to behave when stressed?",
@@ -442,7 +539,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 20,
-		round: 6,
+		round: 7,
 		roundTitle: "Personality Check",
 		type: "choice",
 		prompt: "What is most likely to make RoyDavinci happy?",
@@ -458,7 +555,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 21,
-		round: 6,
+		round: 7,
 		roundTitle: "Personality Check",
 		type: "choice",
 		prompt: "Which unusual habit did RoyDavinci admit to?",
@@ -474,7 +571,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 22,
-		round: 6,
+		round: 7,
 		roundTitle: "Personality Check",
 		type: "choice",
 		prompt: "What is RoyDavinci most obsessed with?",
@@ -490,7 +587,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 23,
-		round: 6,
+		round: 7,
 		roundTitle: "Personality Check",
 		type: "choice",
 		prompt: "What does RoyDavinci say he is terrible at?",
@@ -506,7 +603,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 24,
-		round: 6,
+		round: 7,
 		roundTitle: "Personality Check",
 		type: "choice",
 		prompt: "What is RoyDavinci’s idea of an ideal outing?",
@@ -522,7 +619,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 52,
-		round: 6,
+		round: 7,
 		roundTitle: "Personality Check",
 		type: "choice",
 		prompt: "Boss question: which statement about RoyDavinci is FALSE?",
@@ -536,10 +633,10 @@ export const QUESTIONS: QuizQuestion[] = [
 		points: 25,
 		funFact: "When I’m stressed I actually get sleepy and quiet. The other three are all true.",
 	},
-	// ROUND 7 — QUICK MATHS
+	// ROUND 8 — QUICK MATHS
 	{
 		id: 66,
-		round: 7,
+		round: 8,
 		roundTitle: "Quick Maths",
 		type: "choice",
 		prompt: "What is 15% of 240?",
@@ -555,7 +652,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 67,
-		round: 7,
+		round: 8,
 		roundTitle: "Quick Maths",
 		type: "choice",
 		prompt: "What is 7 × 8 + 6?",
@@ -571,7 +668,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 68,
-		round: 7,
+		round: 8,
 		roundTitle: "Quick Maths",
 		type: "choice",
 		prompt: "What is 144 ÷ 12 + 9?",
@@ -587,7 +684,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 69,
-		round: 7,
+		round: 8,
 		roundTitle: "Quick Maths",
 		type: "choice",
 		prompt: "₦5,000 is shared equally between 8 people. How much does each person get?",
@@ -603,7 +700,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 70,
-		round: 7,
+		round: 8,
 		roundTitle: "Quick Maths",
 		type: "choice",
 		prompt: "A shirt costs ₦8,000 and has a 25% discount. What is the new price?",
@@ -617,10 +714,10 @@ export const QUESTIONS: QuizQuestion[] = [
 		points: 10,
 		funFact: "25% of 8,000 is 2,000, so the new price is ₦6,000.",
 	},
-	// ROUND 8 — TECH & CAREER
+	// ROUND 9 — TECH & CAREER
 	{
 		id: 26,
-		round: 8,
+		round: 9,
 		roundTitle: "Tech & Career",
 		type: "text",
 		prompt: "Which was RoyDavinci’s first serious programming language?",
@@ -634,7 +731,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 27,
-		round: 8,
+		round: 9,
 		roundTitle: "Tech & Career",
 		type: "text",
 		prompt: "Name any two technologies RoyDavinci works with.",
@@ -658,7 +755,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 28,
-		round: 8,
+		round: 9,
 		roundTitle: "Tech & Career",
 		type: "number",
 		prompt:
@@ -670,7 +767,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 29,
-		round: 8,
+		round: 9,
 		roundTitle: "Tech & Career",
 		type: "number",
 		prompt:
@@ -682,7 +779,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 30,
-		round: 8,
+		round: 9,
 		roundTitle: "Tech & Career",
 		type: "choice",
 		prompt: "What is RoyDavinci’s current professional goal?",
@@ -698,7 +795,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 53,
-		round: 8,
+		round: 9,
 		roundTitle: "Tech & Career",
 		type: "choice",
 		prompt: "Boss question: which statement about RoyDavinci is FALSE?",
@@ -712,10 +809,10 @@ export const QUESTIONS: QuizQuestion[] = [
 		points: 25,
 		funFact: "My goal is systems design engineering, not data science. The other three are all true.",
 	},
-	// ROUND 9 — MONEY MOVES & AMBITIONS
+	// ROUND 10 — MONEY MOVES & AMBITIONS
 	{
 		id: 31,
-		round: 9,
+		round: 10,
 		roundTitle: "Money Moves & Ambitions",
 		type: "number",
 		prompt:
@@ -727,7 +824,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 32,
-		round: 9,
+		round: 10,
 		roundTitle: "Money Moves & Ambitions",
 		type: "number",
 		prompt:
@@ -739,7 +836,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 33,
-		round: 9,
+		round: 10,
 		roundTitle: "Money Moves & Ambitions",
 		type: "number",
 		prompt:
@@ -751,7 +848,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 34,
-		round: 9,
+		round: 10,
 		roundTitle: "Money Moves & Ambitions",
 		type: "text",
 		prompt: "Name a European country on RoyDavinci’s dream-destination list.",
@@ -770,7 +867,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 35,
-		round: 9,
+		round: 10,
 		roundTitle: "Money Moves & Ambitions",
 		type: "choice",
 		prompt:
@@ -787,7 +884,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 54,
-		round: 9,
+		round: 10,
 		roundTitle: "Money Moves & Ambitions",
 		type: "number",
 		prompt: "Pay attention: roughly how many times could RoyDavinci’s first salary fit into his dream-car budget? Enter a whole number.",
@@ -796,10 +893,10 @@ export const QUESTIONS: QuizQuestion[] = [
 		hint: "Divide the dream-car budget by the first salary.",
 		funFact: "₦35,000,000 ÷ ₦18,000 ≈ 1,944. Close guesses still earn partial points.",
 	},
-	// ROUND 10 — NAIJA & POP CULTURE
+	// ROUND 11 — NAIJA & POP CULTURE
 	{
 		id: 71,
-		round: 10,
+		round: 11,
 		roundTitle: "Naija & Pop Culture",
 		type: "text",
 		prompt: "In which year did Nigeria gain independence?",
@@ -812,7 +909,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 72,
-		round: 10,
+		round: 11,
 		roundTitle: "Naija & Pop Culture",
 		type: "choice",
 		prompt: "Which Nigerian state uses the slogan “Centre of Excellence”?",
@@ -828,7 +925,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 73,
-		round: 10,
+		round: 11,
 		roundTitle: "Naija & Pop Culture",
 		type: "text",
 		prompt: "Which Nigerian author wrote the novel “Things Fall Apart”?",
@@ -842,7 +939,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 74,
-		round: 10,
+		round: 11,
 		roundTitle: "Naija & Pop Culture",
 		type: "choice",
 		prompt: "Which Nigerian artist released the album “African Giant”?",
@@ -858,7 +955,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 75,
-		round: 10,
+		round: 11,
 		roundTitle: "Naija & Pop Culture",
 		type: "choice",
 		prompt: "At Lokoja, the River Benue joins which other river?",
@@ -872,10 +969,10 @@ export const QUESTIONS: QuizQuestion[] = [
 		points: 10,
 		funFact: "The two rivers meet at Lokoja, in Kogi State.",
 	},
-	// ROUND 11 — PEOPLE & PRINCIPLES
+	// ROUND 12 — PEOPLE & PRINCIPLES
 	{
 		id: 37,
-		round: 11,
+		round: 12,
 		roundTitle: "People & Principles",
 		type: "choice",
 		prompt: "What does RoyDavinci value most in friendship?",
@@ -891,7 +988,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 39,
-		round: 11,
+		round: 12,
 		roundTitle: "People & Principles",
 		type: "choice",
 		prompt: "What makes RoyDavinci feel appreciated?",
@@ -907,7 +1004,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 40,
-		round: 11,
+		round: 12,
 		roundTitle: "People & Principles",
 		type: "choice",
 		prompt:
@@ -924,7 +1021,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 41,
-		round: 11,
+		round: 12,
 		roundTitle: "People & Principles",
 		type: "choice",
 		prompt: "What is RoyDavinci most proud of about himself?",
@@ -940,7 +1037,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 42,
-		round: 11,
+		round: 12,
 		roundTitle: "People & Principles",
 		type: "choice",
 		prompt:
@@ -957,7 +1054,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 55,
-		round: 11,
+		round: 12,
 		roundTitle: "People & Principles",
 		type: "choice",
 		prompt: "Boss question: which statement about RoyDavinci is FALSE?",
@@ -971,10 +1068,155 @@ export const QUESTIONS: QuizQuestion[] = [
 		points: 25,
 		funFact: "Consistent presence is what makes me feel valued. The other three are all true.",
 	},
-	// ROUND 12 — BRAIN TEASERS
+	// ROUND 13 — ROY IN REAL LIFE
+	{
+		id: 101,
+		round: 13,
+		roundTitle: "Roy in Real Life",
+		type: "choice",
+		prompt: "Someone asks Roy to go out. What does he usually say?",
+		options: [
+			"I don’t know… I have some work to do.",
+			"Yes! Give me ten minutes.",
+			"Sure, I’ll pick everybody up.",
+			"Where are we going? I’m already outside.",
+		],
+		correctAnswer: "I don’t know… I have some work to do.",
+		points: 15,
+		funFact: "I either say “I don’t know” or use work as an excuse. 🌚",
+	},
+	{
+		id: 102,
+		round: 13,
+		roundTitle: "Roy in Real Life",
+		type: "choice",
+		prompt: "What does Roy say when he is hungry?",
+		options: [
+			"Nothing much",
+			"I’m starving, let’s eat now!",
+			"Where is the food?",
+			"Somebody order jollof rice.",
+		],
+		correctAnswer: "Nothing much",
+		points: 15,
+		funFact: "When I’m hungry, I don’t say much.",
+	},
+	{
+		id: 103,
+		round: 13,
+		roundTitle: "Roy in Real Life",
+		type: "choice",
+		prompt: "What does Roy say when Manchester United lose?",
+		options: [
+			"I rarely watch football anymore, they always lose.",
+			"Next season is our season!",
+			"The referee robbed us.",
+			"I’m switching clubs.",
+		],
+		correctAnswer: "I rarely watch football anymore, they always lose.",
+		points: 15,
+		funFact: "I rarely watch football anymore because they always lose. 🌚",
+	},
+	{
+		id: 104,
+		round: 13,
+		roundTitle: "Roy in Real Life",
+		type: "choice",
+		prompt: "Something goes wrong at work and it was Roy’s own mistake. What does he do?",
+		options: [
+			"Owns up, or silently fixes it",
+			"Blames the deadline",
+			"Waits to see if anyone notices",
+			"Asks a teammate to take over",
+		],
+		correctAnswer: "Owns up, or silently fixes it",
+		points: 15,
+		funFact: "If it’s my mistake, I own up to it or I silently fix it.",
+	},
+	{
+		id: 105,
+		round: 13,
+		roundTitle: "Roy in Real Life",
+		type: "choice",
+		prompt: "Something goes wrong at work and it was someone else’s mistake. What does Roy do?",
+		options: [
+			"Hisses and does it himself",
+			"Calls a long meeting about it",
+			"Reports it straight to the manager",
+			"Waits for them to fix it",
+		],
+		correctAnswer: "Hisses and does it himself",
+		points: 15,
+		funFact: "If it’s someone else, I just hiss and do it myself.",
+	},
+	{
+		id: 106,
+		round: 13,
+		roundTitle: "Roy in Real Life",
+		type: "choice",
+		prompt: "How does Roy usually end a conversation?",
+		options: [
+			"“No wahala. I’ll call you back.”",
+			"“Alright, bye!”",
+			"“Text me later.”",
+			"“Let’s continue tomorrow.”",
+		],
+		correctAnswer: "“No wahala. I’ll call you back.”",
+		points: 15,
+		funFact: "No wahala. If it’s a call, I’ll call you back.",
+	},
+	{
+		id: 107,
+		round: 13,
+		roundTitle: "Roy in Real Life",
+		type: "choice",
+		prompt: "What does Roy do when he is really happy about something?",
+		options: [
+			"Talks about it all the time",
+			"Keeps it to himself",
+			"Celebrates quietly alone",
+			"Posts about it online",
+		],
+		correctAnswer: "Talks about it all the time",
+		points: 15,
+		funFact: "When I’m happy about something, I talk about it all the time.",
+	},
+	{
+		id: 108,
+		round: 13,
+		roundTitle: "Roy in Real Life",
+		type: "choice",
+		prompt: "What does Roy say when someone is late?",
+		options: [
+			"Nothing really",
+			"“What time do you call this?”",
+			"“I’ve been waiting an hour.”",
+			"“Next time, I’m leaving without you.”",
+		],
+		correctAnswer: "Nothing really",
+		points: 15,
+		funFact: "When someone is late, I say nothing really.",
+	},
+	{
+		id: 109,
+		round: 13,
+		roundTitle: "Roy in Real Life",
+		type: "choice",
+		prompt: "What is Roy’s go-to reply when he is busy?",
+		options: [
+			"“I’m busy right now, can we talk later?”",
+			"“Can it wait?”",
+			"“I’m in a meeting.”",
+			"“Send me a text.”",
+		],
+		correctAnswer: "“I’m busy right now, can we talk later?”",
+		points: 15,
+		funFact: "“I’m busy right now, can we talk later?” Or I’ll call later, because I have something I’m doing.",
+	},
+	// ROUND 14 — BRAIN TEASERS
 	{
 		id: 76,
-		round: 12,
+		round: 14,
 		roundTitle: "Brain Teasers",
 		type: "choice",
 		prompt: "What number comes next: 2, 4, 8, 16, …?",
@@ -990,7 +1232,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 77,
-		round: 12,
+		round: 14,
 		roundTitle: "Brain Teasers",
 		type: "choice",
 		prompt: "A farmer has 17 goats. All but 9 run away. How many goats are left?",
@@ -1006,7 +1248,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 78,
-		round: 12,
+		round: 14,
 		roundTitle: "Brain Teasers",
 		type: "choice",
 		prompt: "How many months of the year have at least 28 days?",
@@ -1022,7 +1264,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 79,
-		round: 12,
+		round: 14,
 		roundTitle: "Brain Teasers",
 		type: "choice",
 		prompt: "In a race, you overtake the person in second place. What position are you in now?",
@@ -1038,7 +1280,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 80,
-		round: 12,
+		round: 14,
 		roundTitle: "Brain Teasers",
 		type: "choice",
 		prompt: "I have cities but no houses, forests but no trees, and water but no fish. What am I?",
@@ -1052,10 +1294,10 @@ export const QUESTIONS: QuizQuestion[] = [
 		points: 10,
 		funFact: "A map shows cities, forests and water without containing any of them.",
 	},
-	// ROUND 13 — DEEP CUTS
+	// ROUND 15 — DEEP CUTS
 	{
 		id: 43,
-		round: 13,
+		round: 15,
 		roundTitle: "Deep Cuts",
 		type: "text",
 		prompt: "What phrase does RoyDavinci say without always realizing it?",
@@ -1067,7 +1309,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 44,
-		round: 13,
+		round: 15,
 		roundTitle: "Deep Cuts",
 		type: "text",
 		prompt:
@@ -1080,7 +1322,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 45,
-		round: 13,
+		round: 15,
 		roundTitle: "Deep Cuts",
 		type: "choice",
 		prompt: "What is RoyDavinci surprisingly good at?",
@@ -1096,7 +1338,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 46,
-		round: 13,
+		round: 15,
 		roundTitle: "Deep Cuts",
 		type: "choice",
 		prompt: "What does RoyDavinci say he is surprisingly bad at?",
@@ -1112,7 +1354,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 48,
-		round: 13,
+		round: 15,
 		roundTitle: "Deep Cuts",
 		type: "choice",
 		prompt: "If RoyDavinci got a free plane ticket, where would he go?",
@@ -1123,7 +1365,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 49,
-		round: 13,
+		round: 15,
 		roundTitle: "Deep Cuts",
 		type: "number",
 		prompt: "How many siblings does RoyDavinci have? Enter a number.",
@@ -1134,7 +1376,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 50,
-		round: 13,
+		round: 15,
 		roundTitle: "Deep Cuts",
 		type: "text",
 		prompt: "What surname did RoyDavinci persuade his family to change to?",
@@ -1147,7 +1389,7 @@ export const QUESTIONS: QuizQuestion[] = [
 	},
 	{
 		id: 56,
-		round: 13,
+		round: 15,
 		roundTitle: "Deep Cuts",
 		type: "choice",
 		prompt: "Boss question: which statement about RoyDavinci is FALSE?",
